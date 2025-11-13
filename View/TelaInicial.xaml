@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroDeEventos_.TelaInicial"
+             BackgroundColor="White"
+             Title="TelaInicial">
+
+    <Grid VerticalOptions="Center" Padding="20">
+        <VerticalStackLayout Spacing="20">
+            <Label Text="Cadastro de Eventos"
+                   TextColor="{StaticResource Primary}"
+                   FontFamily="Kalam"
+                   FontSize="50"
+                   HorizontalTextAlignment="Center"/>
+
+        <Border
+                Stroke="Blue"
+                StrokeThickness="2"
+                Background="LightBlue"
+                StrokeShape="RoundRectangle 10"
+                Padding="10">
+
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Olá! Vamos Iniciar seu Cadastro?"
+                           FontSize="25"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           HorizontalOptions="Center"/>
+
+                <Label Text="   Para iniciarmos, clique no botão abaixo. &#10;   Caso queira sair, aperte no X acima, onde automáticamente você será redirecionado para fora da página. "
+                           FontSize="20"
+                           TextColor="Black"
+                           HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+            
+        </Border>
+
+        <Button Text="Avançar"
+                        x:Name="btnAvancar"
+                        BackgroundColor="DarkBlue"
+                        TextColor="White"
+                        CornerRadius="10"
+                        WidthRequest="150"
+                        HorizontalOptions="Center"
+                        Clicked="btnAvancar_Clicked"/>
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

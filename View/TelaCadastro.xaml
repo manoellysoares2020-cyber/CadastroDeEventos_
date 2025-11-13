@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroDeEventos_.TelaCadastro"
+              BackgroundColor="White"
+             Title="TelaCadastro">
+
+
+    <Label Text="Escolha seu Evento"/>
+
+    <Picker x:Name="pck_eventos"
+                        Title="Selecione sua Acomodação"
+                        ItemDisplayBinding="{Binding Descricao}"/>
+
+    <Frame Padding="10"
+                       Margin="10">
+        <VerticalStackLayout>
+            <Label Text="Periodo de estadia"/>
+            <HorizontalStackLayout>
+                <Label Text="Check-in: "/>
+                <DatePicker x:Name="dtpck_checkin"
+                                        Format="dd/MM/yyyy"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Check-out: "/>
+                <DatePicker x:Name="dtpck_checkout"
+                                        Format="dd/MM/yyyy"/>
+
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+    </Frame>
+
+
+    <VerticalStackLayout>
+        <Grid RowDefinitions="auto, auto"
+                      ColumnDefinitions="*, *, 2*">
+
+            <Label Grid.Row="0" Grid.Column="0"
+                            Text="Participantes: " />
+
+            <Label Grid.Row="0" Grid.Column="1"
+                           TextColor="DarkBlue" 
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_participantes}"/>
+
+            <Stepper Grid.Row="0" Grid.Column="2"
+                             x:Name="stp_participantes"
+                             Minimum="0"
+                             Maximum="10"
+                             Increment="1"/>
+
+        </Grid>
+
+        <Label Text="Escolha sua Suíte"/>
+
+        <Picker x:Name="pck_eventos"
+                        Title="Selecione sua Acomodação"
+                        ItemDisplayBinding="{Binding Descricao}"/>
+
+        <Frame Padding="10"
+                       Margin="10">
+            <VerticalStackLayout>
+                <Label Text="Periodo de estadia"/>
+                <HorizontalStackLayout>
+                    <Label Text="Check-in: "/>
+                    <DatePicker x:Name="dtpck_checkin"
+                                        Format="dd/MM/yyyy"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Check-out: "/>
+                    <DatePicker x:Name="dtpck_checkout"
+                                        Format="dd/MM/yyyy"/>
+
+
+                </HorizontalStackLayout>
+
+                <Button Text="Voltar" 
+         BackgroundColor="DarkBlue"
+         TextColor="White"
+         CornerRadius="10"
+         WidthRequest="150"
+         Clicked="Voltar_Clicked"  />
+
+            </VerticalStackLayout>
+</ContentPage>
