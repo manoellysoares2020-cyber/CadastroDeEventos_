@@ -2,85 +2,28 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CadastroDeEventos_.TelaCadastro"
-              BackgroundColor="White"
-             Title="TelaCadastro">
+             Title="Resumo do Evento">
 
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="12">
 
-    <Label Text="Escolha seu Evento"/>
+            <Label Text="Resumo do Evento" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"/>
 
-    <Picker x:Name="pck_eventos"
-                        Title="Selecione sua Acomodação"
-                        ItemDisplayBinding="{Binding Descricao}"/>
+            <Frame Padding="12" BorderColor="#CCC">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="{Binding Nome, StringFormat='Nome: {0}'}" />
+                    <Label Text="{Binding Participantes, StringFormat='Participantes: {0}'}" />
+                    <Label Text="{Binding CheckIn, StringFormat='Check-in: {0:dd/MM/yyyy}'}" />
+                    <Label Text="{Binding CheckOut, StringFormat='Check-out: {0:dd/MM/yyyy}'}" />
+                    <Label Text="{Binding DuracaoDias, StringFormat='Duração: {0} dia(s)'}" />
+                    <Label Text="{Binding CustoPorParticipante, StringFormat='Custo por pessoa: R$ {0:F2}'}" />
+                    <Label Text="{Binding CustoTotal, StringFormat='Custo total: R$ {0:F2}'}" FontAttributes="Bold" TextColor="DarkBlue"/>
+                </VerticalStackLayout>
+            </Frame>
 
-    <Frame Padding="10"
-                       Margin="10">
-        <VerticalStackLayout>
-            <Label Text="Periodo de estadia"/>
-            <HorizontalStackLayout>
-                <Label Text="Check-in: "/>
-                <DatePicker x:Name="dtpck_checkin"
-                                        Format="dd/MM/yyyy"/>
-            </HorizontalStackLayout>
-            <HorizontalStackLayout>
-                <Label Text="Check-out: "/>
-                <DatePicker x:Name="dtpck_checkout"
-                                        Format="dd/MM/yyyy"/>
-
-            </HorizontalStackLayout>
+            <Button Text="Voltar" Clicked="Voltar_Clicked" BackgroundColor="DarkBlue" TextColor="White" HorizontalOptions="Center"/>
         </VerticalStackLayout>
-
-    </Frame>
-
-
-    <VerticalStackLayout>
-        <Grid RowDefinitions="auto, auto"
-                      ColumnDefinitions="*, *, 2*">
-
-            <Label Grid.Row="0" Grid.Column="0"
-                            Text="Participantes: " />
-
-            <Label Grid.Row="0" Grid.Column="1"
-                           TextColor="DarkBlue" 
-                           Text="{Binding Value}"
-                           BindingContext="{x:Reference stp_participantes}"/>
-
-            <Stepper Grid.Row="0" Grid.Column="2"
-                             x:Name="stp_participantes"
-                             Minimum="0"
-                             Maximum="10"
-                             Increment="1"/>
-
-        </Grid>
-
-        <Label Text="Escolha sua Suíte"/>
-
-        <Picker x:Name="pck_eventos"
-                        Title="Selecione sua Acomodação"
-                        ItemDisplayBinding="{Binding Descricao}"/>
-
-        <Frame Padding="10"
-                       Margin="10">
-            <VerticalStackLayout>
-                <Label Text="Periodo de estadia"/>
-                <HorizontalStackLayout>
-                    <Label Text="Check-in: "/>
-                    <DatePicker x:Name="dtpck_checkin"
-                                        Format="dd/MM/yyyy"/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout>
-                    <Label Text="Check-out: "/>
-                    <DatePicker x:Name="dtpck_checkout"
-                                        Format="dd/MM/yyyy"/>
-
-
-                </HorizontalStackLayout>
-
-                <Button Text="Voltar" 
-         BackgroundColor="DarkBlue"
-         TextColor="White"
-         CornerRadius="10"
-         WidthRequest="150"
-         Clicked="Voltar_Clicked"  />
-
-            </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
+
+

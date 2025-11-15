@@ -3,28 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CadastroDeEventos_.View.TelaCadastro2"
              Title="TelaCadastro2">
-    
+
     <VerticalStackLayout>
 
-        <Frame Padding="10">
-            <VerticalStackLayout>
-                <Grid RowDefinitions="auto, auto"
-                      ColumnDefinitions="*, *, 2*">
+        
 
-                    <Label Grid.Row="0" Grid.Column="0"
-                            Text="Adultos: " />
+    </VerticalStackLayout>
 
-                    <Label Grid.Row="0" Grid.Column="1"
-                           TextColor="DarkBlue" 
-                           Text="{Binding Value}"
-                           BindingContext="{x:Reference stp_adultos}"/>
-
-                    <Stepper Grid.Row="0" Grid.Column="2"
-                             x:Name="stp_adultos"
-                             Minimum="0"
-                             Maximum="10"
-                             Increment="1"/>
-                </Grid>
-                </Frame>
-            </VerticalStackLayout>
 </ContentPage>
