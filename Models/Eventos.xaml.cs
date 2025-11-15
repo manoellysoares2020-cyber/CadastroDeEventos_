@@ -7,6 +7,7 @@ namespace MauiAppHotel.Models
     public class Eventos : INotifyPropertyChanged
     {
         private string _nome;
+        private string _evento;
         private int _participantes;
         private DateTime _checkIn;
         private DateTime _checkOut;
@@ -19,7 +20,11 @@ namespace MauiAppHotel.Models
             get => _nome;
             set => SetField(ref _nome, value);
         }
-
+        public string Evento
+        {
+            get => _evento;
+            set => SetField(ref _evento, value);
+        }
         public int Participantes
         {
             get => _participantes;

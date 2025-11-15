@@ -11,10 +11,14 @@
             <Entry Text="{Binding Nome, Mode=TwoWay}" 
                    Placeholder="Seu nome" />
 
+            <Label Text="Digite o nome do Evento:" />
+            <Entry Text="{Binding Evento, Mode=TwoWay}" 
+                   Placeholder="Nome do evento" />
+
             <Grid ColumnDefinitions="*, Auto, 2*">
                 <Label Text="Participantes:" 
                        VerticalOptions="Center" />
-                
+
                 <Label Grid.Column="1" 
                        Text="{Binding Participantes}" 
                        VerticalOptions="Center" 

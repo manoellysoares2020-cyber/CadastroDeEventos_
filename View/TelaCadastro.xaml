@@ -12,6 +12,7 @@
             <Frame Padding="12" BorderColor="#CCC">
                 <VerticalStackLayout Spacing="8">
                     <Label Text="{Binding Nome, StringFormat='Nome: {0}'}" />
+                    <Label Text="{Binding Evento, StringFormat='Evento: {0}'}" />
                     <Label Text="{Binding Participantes, StringFormat='Participantes: {0}'}" />
                     <Label Text="{Binding CheckIn, StringFormat='Check-in: {0:dd/MM/yyyy}'}" />
                     <Label Text="{Binding CheckOut, StringFormat='Check-out: {0:dd/MM/yyyy}'}" />

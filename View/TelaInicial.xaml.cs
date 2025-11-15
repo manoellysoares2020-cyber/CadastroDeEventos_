@@ -25,13 +25,13 @@ namespace CadastroDeEventos_
             BindingContext = eventos;
 
             dtpCheckin.MinimumDate = DateTime.Now.Date;
-            dtpCheckIn.MaximumDate = DateTime.Now.Date.AddMonths(12);
+            dtpCheckin.MaximumDate = DateTime.Now.Date.AddMonths(12);
 
             dtpCheckOut.MinimumDate = eventos.CheckIn.AddDays(1);
             dtpCheckOut.MaximumDate = eventos.CheckIn.AddMonths(6);
 
             // Quando o usuário muda o Check-in
-            dtpCheckIn.DateSelected += (s, e) =>
+            dtpCheckin.DateSelected += (s, e) =>
             {
                 eventos.CheckIn = e.NewDate.Date;
 
