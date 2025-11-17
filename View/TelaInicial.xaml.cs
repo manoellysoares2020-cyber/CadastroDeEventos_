@@ -1,5 +1,5 @@
 using System;
-using MauiAppHotel.Models; 
+using CadastroDeEventos_.Models;
 using Microsoft.Maui.Controls;
 
 namespace CadastroDeEventos_
@@ -49,7 +49,12 @@ namespace CadastroDeEventos_
                 eventos.CheckOut = e.NewDate.Date;
             };
         }
-  
+
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
+        }
+
         private async void BtnAvancar_Clicked(object sender, EventArgs e)
         {
             // validações básicas

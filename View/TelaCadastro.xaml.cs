@@ -1,5 +1,5 @@
 using System;
-using MauiAppHotel.Models;
+using CadastroDeEventos_.Models;
 
 namespace CadastroDeEventos_
 {

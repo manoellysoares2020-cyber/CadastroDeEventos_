@@ -2,9 +2,9 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace MauiAppHotel.Models
+namespace CadastroDeEventos_.Models
 {
-    public class Eventos : INotifyPropertyChanged
+    public partial class Eventos : INotifyPropertyChanged
     {
         private string _nome;
         private string _evento;
