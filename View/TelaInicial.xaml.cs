@@ -7,8 +7,10 @@ namespace CadastroDeEventos_
     public partial class TelaInicial : ContentPage
 
     {
-      
+
         private Eventos eventos;
+       
+
 
         public TelaInicial()
         {
@@ -50,10 +52,6 @@ namespace CadastroDeEventos_
             };
         }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
 
         private async void BtnAvancar_Clicked(object sender, EventArgs e)
         {
@@ -70,7 +68,7 @@ namespace CadastroDeEventos_
                 return;
             }
 
-            
+
             await Navigation.PushAsync(new TelaCadastro(eventos));
         }
     }

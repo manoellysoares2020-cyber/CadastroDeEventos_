@@ -2,97 +2,75 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CadastroDeEventos_.TelaInicial"
-             BackgroundColor="White"
-             Title="Cadastro de Eventos"/>
+             BackgroundColor="LightGray">
+    
+    <NavigationPage.TitleView>
+        <Label Text="Cadastro do Evento" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" TextColor="LightBlue"/>
+    </NavigationPage.TitleView>
 
-<NavigationPage.TitleView>
-    <Label Text="Cadastro de Eventos"
-               HorizontalOptions="Center" 
-               FontAttributes="Bold"
-               FontSize="20"  
-               TextColor="LightBlue"/>
-</NavigationPage.TitleView>
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="12">
+            <Label Text="Digite o nome do evento:" TextColor="Black" />
+            <Entry Text="{Binding Nome, Mode=TwoWay}" Placeholder="Nome do evento" TextColor="Black" />
 
-<ScrollView>
-    <VerticalStackLayout Padding="15" Spacing="12">
-        <Label Text="Digite o nome do evento:" 
-                   TextColor="Black"/>
-        <Entry Text="{Binding Nome, Mode=TwoWay}" 
-                   Placeholder="Nome do evento" 
-                        TextColor="Black"/>
+            <Label Text="Digite o local do evento:" TextColor="Black"/>
+            <Entry Text="{Binding Evento, Mode=TwoWay}" Placeholder="Local do evento" TextColor="Black"/>
 
-        <Label Text="Digite o local do evento:"
-                   TextColor="Black"/>
-        <Entry Text="{Binding Evento, Mode=TwoWay}" 
-                   Placeholder="Local do evento"
-                   TextColor="Black"/>
+            <Grid RowDefinitions="Auto, Auto"
+                  ColumnDefinitions="*, Auto, 2*"
+                  RowSpacing="8"
+                  ColumnSpacing="8"
+                  Padding="0">
 
-        <Grid RowDefinitions="Auto, Auto"
-      ColumnDefinitions="*, Auto, 2*"
-      RowSpacing="8"
-      ColumnSpacing="8"
-      Padding="0">
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="Participantes:" TextColor="Black" VerticalOptions="Center" />
 
-            <Label Grid.Row="0" Grid.Column="0"
-           Text="Participantes:"
-           TextColor="Black"
-           VerticalOptions="Center" />
+                <Label Grid.Row="0" Grid.Column="1"
+                       Text="{Binding Participantes}" TextColor="Black"
+                       VerticalOptions="Center" HorizontalOptions="Center" />
 
-            <Label Grid.Row="0" Grid.Column="1"
-           Text="{Binding Participantes}"
-           TextColor="Black"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
+                <Stepper Grid.Row="0" Grid.Column="2"
+                         Minimum="0" Maximum="100"
+                         Value="{Binding Participantes, Mode=TwoWay}"
+                         BackgroundColor="LightBlue"
+                         HorizontalOptions="Center" VerticalOptions="Center" />
 
-            <Stepper Grid.Row="0" Grid.Column="2"
-             Minimum="0" Maximum="100"
-             Value="{Binding Participantes, Mode=TwoWay}"
-             BackgroundColor="LightBlue"
-             HorizontalOptions="Center"
-             VerticalOptions="Center" />
+                <Label Grid.Row="1" Grid.Column="0"
+                       Text="Custo por participante: 100" TextColor="Black" VerticalOptions="Center" />
 
-            <Label Grid.Row="1" Grid.Column="0"
-           Text="Custo por participante: 100"
-           TextColor="Black"
-           VerticalOptions="Center" />
+            </Grid>
 
-        </Grid>
+            <Frame Padding="10" BorderColor="#CCC" BackgroundColor="LightBlue" >
+                <VerticalStackLayout Spacing="8" >
+                    <Label Text="Período do Evento" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Black"/>
 
-        <Frame Padding="10" BorderColor="#CCC" BackgroundColor = "LightBlue">
+                    <HorizontalStackLayout Spacing="8">
+                        <Label Text="Check-in:" VerticalOptions="Center" TextColor="Black"/>
+                       
+                        <DatePicker x:Name="dtpCheckin"
+                                    Date="{Binding CheckIn, Mode=TwoWay}"
+                                    Format="dd/MM/yyyy" 
+                                    TextColor="Black"/>
+                    </HorizontalStackLayout>
 
-            <VerticalStackLayout Spacing="8">
+                    <HorizontalStackLayout Spacing="8">
+                        <Label Text="Check-out:" VerticalOptions="Center" TextColor="Black"/>
+                        <DatePicker x:Name="dtpCheckOut"
+                                    Date="{Binding CheckOut, Mode=TwoWay}"
+                                    Format="dd/MM/yyyy" 
+                                    TextColor="Black"/>
+                    </HorizontalStackLayout>
 
-                <Label Text="Período do Evento" 
-                           FontAttributes="Bold"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"/>
+                    <Label Text="{Binding DuracaoDias, StringFormat='Duração: {0} dia(s)'}" TextColor="Black" />
+                </VerticalStackLayout>
+            </Frame>
 
-                <HorizontalStackLayout Spacing="8">
-                    <Label Text="Check-in:" VerticalOptions="Center"/>
-                    <DatePicker x:Name="dtpCheckin" 
-                                    Date="{Binding CheckIn, Mode=TwoWay}" 
-                                    Format="dd/MM/yyyy" />
-                </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="16">
+                <Button Text="Avançar" Clicked="BtnAvancar_Clicked" BackgroundColor="LightBlue" TextColor="Black"/>
+            </HorizontalStackLayout>
 
-                <HorizontalStackLayout Spacing="8">
-                    <Label Text="Check-out:" 
-                               VerticalOptions="Center"/>
-                    <DatePicker x:Name="dtpCheckOut" 
-                                    Date="{Binding CheckOut, Mode=TwoWay}" 
-                                    Format="dd/MM/yyyy" />
-                </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
 
-                <Label Text="{Binding DuracaoDias, StringFormat='Duração: {0} dia(s)'}" />
-            </VerticalStackLayout>
-        </Frame>
-
-        <HorizontalStackLayout HorizontalOptions="Center" Spacing="16">
-            <Button Text="Avançar" 
-                        Clicked="BtnAvancar_Clicked" 
-                        BackgroundColor="DarkBlue" 
-                        TextColor="White"/>
-        </HorizontalStackLayout>
-
-    </VerticalStackLayout>
-</ScrollView>
-
+  
